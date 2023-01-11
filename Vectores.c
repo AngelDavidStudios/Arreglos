@@ -2,6 +2,9 @@
 
 int main(){
 
+    double Mayor = 0;
+    int Position = 0;
+
 double v1[]={
 0.3,
 725913,
@@ -202,6 +205,18 @@ double v1[]={
 
 int longitud=sizeof(v1)/sizeof(v1[0]);
 
-printf("el tamaño del vector es: %d",longitud);
+printf("El tamano del vector es: %d \n",longitud);
+
+for (int i = 0; i < longitud; i++)
+{
+    if (v1[i] > Mayor) {
+        Mayor = v1[i];
+        Position=i;
+    }
+
+}
+
+printf("El mayor de la lista de numeros es: %f \n", Mayor);
+printf("Se ubica en la posicion: %d \n", Position);
 
 }
