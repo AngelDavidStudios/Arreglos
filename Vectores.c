@@ -1,12 +1,5 @@
 #include<stdio.h>
 
-int main(){
-
-    double Mayor = 0;
-    double Menor = 0;
-    int PositionMay = 0;
-    int location = 0;
-
 double v1[]={
 0.3,
 725913,
@@ -205,26 +198,46 @@ double v1[]={
 0.02742
 };
 
-int longitud=sizeof(v1)/sizeof(v1[0]);
+    int longitud=sizeof(v1)/sizeof(v1[0]);
 
-printf("El tamano del vector es: %d \n",longitud);
+    double Mayor = 0;
+    double Menor = 0;
+    int Position = 0;
+    int location = 0;
 
-for (int i = 0; i < longitud; i++)
+    void NumMayor();
+    void NumMenor();
+
+int main(){
+
+    printf("El tamano del vector es: %d \n",longitud);
+
+    NumMayor();
+    NumMenor();
+}
+
+void NumMayor() {
+
+    for (int i = 0; i < longitud; i++)
 {
     if (v1[i] > Mayor) {
         Mayor = v1[i];
-        PositionMay=i;
+        Position=i;
     }
 }
 
-  for (int c = 1; c < longitud; c++)
+    printf("El mayor de la lista de numeros es: %f \n", Mayor);
+    printf("Se ubica en la posicion: %d \n", Position);
+
+}
+
+void NumMenor() {
+
+    for (int c = 1; c < longitud; c++)
     if (v1[c] < v1[location])
-      location = c;
+    location = c;
 
-printf("El mayor de la lista de numeros es: %f \n", Mayor);
-printf("Se ubica en la posicion: %d \n", PositionMay);
-
-printf("El menor de la lista de numeros es: %f \n", v1[location]);
-printf("Se ubica en la posicion: %d \n", location + 1);
+    printf("El menor de la lista de numeros es: %f \n", v1[location]);
+    printf("Se ubica en la posicion: %d \n", location + 1);
 
 }
