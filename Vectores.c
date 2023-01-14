@@ -3,7 +3,9 @@
 int main(){
 
     double Mayor = 0;
-    int Position = 0;
+    double Menor = 0;
+    int PositionMay = 0;
+    int location = 0;
 
 double v1[]={
 0.3,
@@ -211,12 +213,18 @@ for (int i = 0; i < longitud; i++)
 {
     if (v1[i] > Mayor) {
         Mayor = v1[i];
-        Position=i;
+        PositionMay=i;
     }
-
 }
 
+  for (int c = 1; c < longitud; c++)
+    if (v1[c] < v1[location])
+      location = c;
+
 printf("El mayor de la lista de numeros es: %f \n", Mayor);
-printf("Se ubica en la posicion: %d \n", Position);
+printf("Se ubica en la posicion: %d \n", PositionMay);
+
+printf("El menor de la lista de numeros es: %f \n", v1[location]);
+printf("Se ubica en la posicion: %d \n", location + 1);
 
 }
